@@ -22,15 +22,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -77,32 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var timerCard = new Card(
-        child: new Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-      const ListTile(
-        leading: const Icon(Icons.timer),
-        title: const Text('Contador de segundos'),
-        subtitle: const Text('Um exemplo simples do uso do event channel.'),
-      ),
-      new Center(
-        child: new Text(
-          '$_valor',
-          style: TextStyle(fontSize: 22),
-        ),
-      ),
-      new ButtonTheme.bar(
-          child: new ButtonBar(children: <Widget>[
-        new FlatButton(
-          child: const Text('Iniciar escuta'),
-          onPressed: _iniciarEscuta,
-        ),
-        new FlatButton(
-          child: const Text('Cancelar escuta'),
-          onPressed: _cancelarEscuta,
-        ),
-      ]))
-    ]));
-
     return new Scaffold(
         appBar: new AppBar(
           title: new Text(widget.title),
